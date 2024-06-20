@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:57:51 by irivero-          #+#    #+#             */
-/*   Updated: 2024/05/28 16:37:21 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:59:48 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,16 @@
 class	PhoneBook
 {
 	private:
-		Contact		_contacts[8];
-		int			_contactCount;
-		int			_oldestIndex;
+		Contact		_contacts[8]; //array of 8 contacts
+		int			_contactCount; // count the number of contacts
+		int			_oldestIndex; // index of the oldest contact
 
 	public:
-		PhoneBook();
-		void	addContact(Contact contact);
-		void	searchContacts();
-		void	displayContact(int index);
-		bool	isEmpty()
-		{
-			return (_contactCount <= 0);
-		}
+		PhoneBook(); // constructor if the class
+		void	addContact(Contact contact); // add a new contact
+		void	searchContacts(); // search and show the contacts in a table
+		void	displayContact(int index); // show the details of a specific contact
+		bool	isEmpty(); // check if the phonebook is empty
 };
 
 #endif

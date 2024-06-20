@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:45:16 by irivero-          #+#    #+#             */
-/*   Updated: 2024/05/28 16:39:57 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:35:53 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 class	Contact
 {
-	private:
+	private: //define atrubutes of the class that keep the contact info
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickname;
 		std::string	_phoneNumber;
 		std::string	_darkestSecret;
 
-	public:
+	public: //set values and get the values and check if the data is empty
 		void	setFirstName(std::string firstName);
 		void	setLastName(std::string lastName);
 		void	setNickname(std::string nickname);
