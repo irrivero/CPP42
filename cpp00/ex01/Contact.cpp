@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:53:15 by irivero-          #+#    #+#             */
-/*   Updated: 2024/05/28 15:49:34 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:08:48 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,8 @@ std::string Contact::getDarkestSecret()
 {
     return (this->_darkestSecret);
 }
+
+bool    Contact::isEmptyInfo() 
+{
+	return (_firstName.empty() || _lastName.empty() || _nickname.empty() || _phoneNumber.empty() || _darkestSecret.empty());
+}	
