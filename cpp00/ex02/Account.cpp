@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 17:28:59 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/01 13:53:49 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/01 14:58:07 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@
         std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";closed" << std::endl;
         Account::_nbAccounts--;
         Account::_totalAmount -= this->_amount;
+
     }
 
     void	Account::makeDeposit( int deposit )
