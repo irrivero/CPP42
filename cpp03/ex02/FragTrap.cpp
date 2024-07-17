@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:40:22 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 15:46:13 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:16:43 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,21 @@ void	FragTrap::attack(const std::string &target)
 
 	std::cout << "FragTrap " << this->getName() << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 	this->_energyPoints -= 1;
+}
+
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
+{
+	*this = copy;
+}
+
+FragTrap	&FragTrap::operator=(const FragTrap &copy)
+{
+	if (this != &copy)
+	{
+		this->_name = copy._name;
+		this->_hitPoints = copy._hitPoints;
+		this->_energyPoints = copy._energyPoints;
+		this->_attackDamage = copy._attackDamage;
+	}
+	return (*this);
 }

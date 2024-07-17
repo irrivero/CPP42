@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:40:24 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 15:42:59 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:03:15 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class FragTrap : public ClapTrap
 	public:
 		FragTrap(std::string name);
 		~FragTrap();
+		FragTrap(const FragTrap &copy);
+		FragTrap &operator=(const FragTrap &copy);
 		
 		void	highFivesGuys(void);
 		void	attack(const std::string &target);
