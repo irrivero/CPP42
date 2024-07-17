@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 13:53:50 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/05 14:46:10 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:08:11 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	Harl::debug( void )
 	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my \
 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
-	warning();
+	info();
 }
 
 void	Harl::info( void )
@@ -44,7 +44,7 @@ void	Harl::error( void )
 }
 void	Harl::complain(std::string level)
 {
-	void (Harl::*complaintF)() = nullptr;
+	void (Harl::*complaintF)() = NULL;
 
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
@@ -72,7 +72,7 @@ void	Harl::complain(std::string level)
 			break;
 		}
 	}
-	if (complaintF != nullptr)
+	if (complaintF != NULL)
 		(this->*complaintF)();
 	else
 	    std::cout << "Oh dear, I haven't heard of the complaint level '" << level << "'. Could you enlighten me?" << std::endl;
