@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 13:53:50 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/05 14:46:36 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:03:49 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	Harl::error( void )
 }
 void	Harl::complain(std::string level)
 {
-	void (Harl::*complaintF)() = nullptr;
+	void (Harl::*complaintF)() = NULL;
 
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
@@ -64,7 +64,7 @@ void	Harl::complain(std::string level)
 			break;
 		}
 	}
-	if (complaintF != nullptr)
+	if (complaintF != NULL)
 		(this->*complaintF)();
 	else
 	    std::cout << "Oh dear, I haven't heard of the complaint level '" << level << "'. Could you enlighten me?" << std::endl;
