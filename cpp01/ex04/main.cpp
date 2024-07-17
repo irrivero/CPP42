@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 13:00:35 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/05 13:35:57 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 12:54:37 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(int ac, char **av)
 	std::string s1 = av[2];
 	std::string s2 = av[3];
 
-	std::ifstream iFile(filename); // open the file
+	std::ifstream iFile(filename.c_str()); // open the file
 	if (!iFile) // check if the file was opened successfully
 	{
 		std::cerr << "Error: could not open file " << filename << std::endl;
@@ -57,13 +57,19 @@ int	main(int ac, char **av)
 	std::string content((std::istreambuf_iterator<char>(iFile)), std::istreambuf_iterator<char>());
 	iFile.close(); // close the input file
 
-	if (content.empty() || content.find(s1) == std::string::npos) // check if the file is empty or if s1 is not in the file
+	if (content.empty()) // check if the file is empty or if s1 is not in the file
 	{
-		std::cerr << "Error: file is empty or '" << s1 << "' is not in the file" << std::endl;
+		std::cerr << "Error: file is empty" << std::endl;
 		return (1);
 	}
 
-	std::ofstream oFile(filename + ".replace"); // open the output file
+	if (content.find(s1) == std::string::npos) // check if s1 is not in the file
+	{
+		std::cerr << "Error: '" << s1 << "' is not in the file" << std::endl;
+		return (1);
+	}
+
+	std::ofstream oFile((filename + ".replace").c_str()); // open the output file
 	if (!oFile) // check if the file was opened successfully
 	{
 		std::cerr << "Error: could not open file " << filename + ".replace" << std::endl;
