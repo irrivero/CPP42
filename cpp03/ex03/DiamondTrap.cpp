@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:12:06 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 16:23:13 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:08:28 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,21 @@ void	DiamondTrap::whoAmI()
 void	DiamondTrap::attack(const std::string &target)
 {
 	ScavTrap::attack(target);
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
+{
+	*this = copy;
+}
+
+DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &copy)
+{
+	if (this != &copy)
+	{
+		this->_name = copy._name;
+		this->_hitPoints = copy._hitPoints;
+		this->_energyPoints = copy._energyPoints;
+		this->_attackDamage = copy._attackDamage;
+	}
+	return (*this);
 }

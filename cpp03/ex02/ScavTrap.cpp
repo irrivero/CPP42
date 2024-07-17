@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:14:16 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 15:28:47 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:07:49 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,21 @@ void	ScavTrap::attack(const std::string &target)
 	}
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 	this->_energyPoints -= 1;
+}
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
+{
+	*this = copy;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
+{
+	if (this != &copy)
+	{
+		this->_name = copy._name;
+		this->_hitPoints = copy._hitPoints;
+		this->_energyPoints = copy._energyPoints;
+		this->_attackDamage = copy._attackDamage;
+	}
+	std::cout << this->_name << " assigned" << std::endl;
+	return (*this);
 }
