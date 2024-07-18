@@ -44,36 +44,34 @@ void	Harl::error( void )
 }
 void	Harl::complain(std::string level)
 {
-	void (Harl::*complaintF)() = NULL;
-
+	int	index = -1;
+	
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == levels[i])
 		{
-			switch (i)
-			{
-			case 0:
-				complaintF = &Harl::debug;
-				break;
-			case 1:
-				complaintF = &Harl::info;
-				break;
-			case 2:
-				complaintF = &Harl::warning;
-				break;
-			case 3:
-				complaintF = &Harl::error;
-				break;
-			default:
-				break;
-			}
-			break;
+			index = i;
+			//break;
 		}
 	}
-	if (complaintF != NULL)
-		(this->*complaintF)();
-	else
-	    std::cout << "Oh dear, I haven't heard of the complaint level '" << level << "'. Could you enlighten me?" << std::endl;
+	switch (index)
+	{
+	case 0:
+		debug();
+		break;
+	case 1:
+		info();
+		break;
+	case 2:
+		warning();
+		break;
+	case 3:
+		error();
+		break;
+	default:
+		std::cout << "Oh dear, I haven't heard of the complaint level '" << level << "'. Could you enlighten me?" << std::endl;
+		break;
+	}
 }
