@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:42:06 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/10 15:44:20 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:23:43 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Fixed
 		Fixed(const Fixed &copy);
 		~Fixed();
 		Fixed &operator=(const Fixed &copy);
+		
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 	

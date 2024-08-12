@@ -18,7 +18,7 @@ Fixed a;
 Fixed const b( 10 );
 Fixed const c( 42.42f );
 Fixed const d( b );
-a = Fixed( 1234.4321f );
+a = Fixed( 1234.4321f ); // a temporary fixed objext is created using the float constructor, this is assigned to a and destroyed afterward
 
 std::cout << "a is " << a << std::endl;
 std::cout << "b is " << b << std::endl;
