@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:14:16 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/17 14:17:00 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:44:11 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap " << this->getName() << " is destroyed!" << std::endl;
 }
 
+// The guardGate function enables the "Gate keeper" mode for the ScavTrap,
+// outputting a message to indicate that the ScavTrap is now in this mode.
 void	ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode" << std::endl;
 }
-
+// The attack function allows the ScavTrap to attack a specified target.
+// If the ScavTrap is dead (hit points <= 0) or out of energy (energy points <= 0), it cannot attack.
+// Otherwise, it outputs a message indicating the attack and reduces the energy points by 1.
 void	ScavTrap::attack(const std::string &target)
 {
 	if (this->_hitPoints <= 0)

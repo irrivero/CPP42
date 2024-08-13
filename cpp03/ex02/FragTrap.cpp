@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:40:22 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/17 16:16:43 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:48:31 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << this->getName() << " is destroyed!" << std::endl;
 }
-
+// The highFivesGuys function outputs a message indicating that the FragTrap is asking for high fives.
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << this->getName() << " is asking for high fives!" << std::endl;

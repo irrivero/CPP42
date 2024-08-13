@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:08:17 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/13 13:16:00 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:48:55 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : public ScavTrap, public FragTrap	// DiamondTrap is derived from ScavTrap and FragTrap
 {
 	private:
 		std::string _name;

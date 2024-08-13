@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:40:24 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/13 13:16:13 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:47:32 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public ClapTrap // FragTrap is derived from ClapTrap
 {
 	public:
 		FragTrap(std::string name);			// default constructor
