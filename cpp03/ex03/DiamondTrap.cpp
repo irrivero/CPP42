@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:12:06 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/17 16:08:28 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:54:04 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap " << this->_name << " is dead!" << std::endl;
 }
 
-
+// whoAmI function: Outputs the name of the DiamondTrap and the name of the ClapTrap
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "I am DiamondTrap " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }
+
+// Attack function: Calls the attack function from the ScavTrap class
 void	DiamondTrap::attack(const std::string &target)
 {
 	ScavTrap::attack(target);

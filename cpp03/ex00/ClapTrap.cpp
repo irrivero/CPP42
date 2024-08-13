@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:15:14 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 14:48:07 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:40:41 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	return (*this);
 }
 
+// Returns the name of the ClapTrap
 std::string	ClapTrap::getName() const
 {
 	return (this->_name);
@@ -47,6 +48,8 @@ std::string	ClapTrap::getName() const
 
 //public member functions
 
+// Attack function: Reduces energy points and outputs an attack message.
+// If the ClapTrap is dead (hit points <= 0) or out of energy, it cannot attack.
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_hitPoints <= 0)
@@ -64,6 +67,8 @@ void	ClapTrap::attack(const std::string& target)
 	this->_energyPoints -= 1;
 }
 
+// TakeDamage function: Reduces the ClapTrap's hit points by the specified amount. 
+// If hit points drop below zero, they are set to zero.
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	this->_hitPoints -= amount;
@@ -72,6 +77,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	std::cout << this->getName() << " takes " << amount << " points of damage! Hit points left: " << this->_hitPoints << std::endl;
 }
 
+// BeRepaired function: Increases the ClapTrap's hit points by the specified amount.
+// If the ClapTrap is dead or out of energy, it cannot be repaired.
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_hitPoints <= 0)

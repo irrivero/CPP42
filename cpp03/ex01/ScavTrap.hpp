@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:03:13 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/13 13:16:24 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:42:47 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public ClapTrap // ScavTrap is derived from ClapTrap
 {
 	private:
 		

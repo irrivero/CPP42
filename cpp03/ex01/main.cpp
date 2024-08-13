@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:24:51 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 15:33:34 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:46:41 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main()
 
 	ScavTrap	Scav("Carrot");
 	Scav.attack("Potato");
-	//Scav.takeDamage(30);
-	//Scav.beRepaired(20);
+	Scav.takeDamage(30);
+	Scav.beRepaired(20);
 	Scav.guardGate();
 	
 	

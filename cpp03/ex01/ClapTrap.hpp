@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 14:10:31 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 15:20:24 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:42:21 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	protected:
+	protected:		// the protected members are accesible inside the base class and by the derived ones
 		std::string		_name;
 		int				_hitPoints;
 		int				_energyPoints;
