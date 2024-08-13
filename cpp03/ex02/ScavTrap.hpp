@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 15:03:13 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/17 16:02:36 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/13 13:16:20 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class ScavTrap : public ClapTrap
 	private:
 		
 	public:
-		ScavTrap(std::string name);
-		~ScavTrap();
-		ScavTrap(const ScavTrap &copy);
-		ScavTrap &operator=(const ScavTrap &copy);
+		ScavTrap(std::string name);		// default constructor
+		~ScavTrap();					// destructor
+		ScavTrap(const ScavTrap &copy); //copy constructor
+		ScavTrap &operator=(const ScavTrap &copy); // copy assignment operator
 
 		void	guardGate();
 		void	attack(const std::string& target);
