@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:03:57 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/14 14:41:13 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:40:02 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int main()
     // You can't instantiate an abstract class Animal
     // const Animal* meta = new Animal(); // This line will cause an error
 
-    // We instantiate an object of the class Dog
+    // We instantiate an object of the class Dog through a pointer to the base class Animal
     const Animal* j = new Dog();
-    // We instantiate an object of the class Cat
+    // We instantiate an object of the class Cat the same way
     const Animal* i = new Cat();
 
     std::cout << std::endl;
