@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:35:05 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/14 15:12:04 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/14 14:44:22 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Animal
 		Animal &operator=(const Animal &copy); // assignment operator
 
 		// Member functions
-		virtual void	makeSound() const;
+		// one function at least pure virtual and = 0, so it can be converted in an abstract class
+		virtual void	makeSound() const = 0; //
 		//getter
 		std::string getType() const;
 		
