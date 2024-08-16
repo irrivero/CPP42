@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:44:31 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:53 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:34:53 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ WrongCat &WrongCat::operator=(const WrongCat &copy)
     return (*this);
 }
 
-// void    WrongCat::makeSound() const
-// {
-//     std::cout << "Tweet tweet" << std::endl;
-// }
+void    WrongCat::makeSound() const
+{
+    std::cout << "Tweet tweet" << std::endl;
+}
