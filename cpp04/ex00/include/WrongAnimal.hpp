@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:40:04 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/18 14:43:05 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:19:50 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class   WrongAnimal
         WrongAnimal &operator=(const WrongAnimal &copy); // assignment operator
 
         // Member functions
-        virtual void    makeSound() const;
+        void    makeSound() const;
 };
 
 #endif

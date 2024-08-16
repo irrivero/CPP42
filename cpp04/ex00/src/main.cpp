@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:03:57 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/14 14:23:27 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/16 15:22:54 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,17 @@ const WrongAnimal* x = new WrongCat();
 std::cout << std::endl;
 std::cout << j->getType() << " " << std::endl; // will output the dog type
 std::cout << i->getType() << " " << std::endl; // will output the cat type
+std::cout << meta->getType() << " " << std::endl; // will output the animal type
 std::cout << std::endl; 
 
+delete meta; // destroy the animal
+meta = new Cat(); // meta is now a cat
+std::cout << meta->getType() << " " << std::endl; // will output the cat type
+meta->makeSound(); // will output the cat sound
+
+std::cout << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound(); //will output the dog sound!
-meta->makeSound(); //will output the animal sound!
 w->makeSound(); //will output the wrong animal sound!
 x->makeSound();	//will output the wrong cat sound! (tweet tweet)
 
