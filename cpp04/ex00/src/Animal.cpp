@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:38:01 by irivero-          #+#    #+#             */
-/*   Updated: 2024/07/18 14:24:07 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:47:10 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Animal::~Animal()
 Animal::Animal(const Animal &copy)
 {
     std::cout << "Animal copy constructor called" << std::endl;
-    *this = copy;
+    this->_type = copy._type;
 }
 Animal &Animal::operator=(const Animal &copy)
 {

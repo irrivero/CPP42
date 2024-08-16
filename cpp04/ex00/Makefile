@@ -1,6 +1,6 @@
 NAME = Animal
-CPP = -c++
-CCFLAGS = -Werror -Wall -Wextra -std=c++98
+CPP = c++
+CCFLAGS = -Werror -Wall -Wextra -std=c++98 -g
 
 INCLUDES = -I include
 SRC_D = src

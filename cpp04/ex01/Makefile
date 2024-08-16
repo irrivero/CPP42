@@ -1,5 +1,5 @@
 NAME = Animal
-CPP = -c++
+CPP = c++
 CCFLAGS = -Werror -Wall -Wextra -std=c++98
 
 INCLUDES = -I include
