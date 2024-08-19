@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:03:57 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/14 15:40:02 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/19 13:22:52 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-#include <iostream>
-#include "Dog.hpp"
-#include "Cat.hpp"
 
 int main() 
 {
