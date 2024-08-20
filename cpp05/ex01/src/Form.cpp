@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:06:15 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 15:31:19 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:19:38 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Form& Form::operator=(const Form& copy)
 
 Form::~Form() {}
 
-const	std::string&	Form::getName() const { return (this->name); }
+const	std::string& Form::getName() const { return (this->name); }
 
 bool	Form::getSignedStatus() const { return (this->signedStatus); }
 
@@ -51,9 +51,9 @@ void	Form::beSigned(const Bureaucrat& b)
 		throw Form::GradeTooLowException();
 }
 
-const char	*Form::GradeTooHighException::what() const throw() { return ("\033[31mGrade is too high\033[0m"); }
+const char	*Form::GradeTooHighException::what() const throw() { return ("Grade is too high"); }
 
-const char	*Form::GradeTooLowException::what() const throw() { return ("\033[31mGrade is too low\033[0m"); }
+const char	*Form::GradeTooLowException::what() const throw() { return ("Grade is too low"); }
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
 {

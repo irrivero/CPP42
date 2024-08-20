@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:18:34 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 16:37:45 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:54:30 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,13 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::action() const
 {
-	std::ofstream	ofs(this->target + "_shrubbery");
+	std::ofstream	ofs((this->target + "_shrubbery").c_str());
+
+    if (!ofs)
+    {
+        std::cerr << "Error: could not open file " << this->target << "_shrubbery" << std::endl;
+        return ;
+    }
 
 	ofs << "    ###\n"
         << "   #o###\n"
