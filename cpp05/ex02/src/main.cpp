@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:42:49 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/20 16:14:06 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:26:54 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(void)
     // trying to sign and execute the forms with irene
     std::cout << YELLOW << "Attempting to sign and execute RobotomyRequestForm with Irene:" << RESET << std::endl;
     ire.signForm(robotomy); // Ire should be able to sign the form
-    ire.executeForm(robotomy); // Ire have to execute the form but will be 50% chance to succeed
+    ire.executeForm(robotomy); // Ire have to execute the form but will have 50% chance to succeed
 	std::cout << std::endl;
 
     // trying to sign and execute the forms with irene but with the wrong grade
@@ -72,8 +72,8 @@ int	main(void)
 	std::cout << std::endl;
 
 	// tryng to execute forms with intern (should fail)
-    std::cout << YELLOW << "Attempting to execute an unsigned RobotomyRequestForm with Junior:" << RESET << std::endl;
-    junior.executeForm(robotomy); // Form not signed, should throw an exception
+    std::cout << YELLOW << "Attempting to execute a RobotomyRequestForm with Junior:" << RESET << std::endl;
+    junior.executeForm(robotomy); // Grade too low, should throw an exception
 
 	std::cout << std::endl;
 	//info about the forms
