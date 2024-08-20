@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:06:15 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 16:06:47 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:20:15 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	AForm::beSigned(const Bureaucrat& b)
 		throw AForm::GradeTooLowException();
 }
 
-const char	*AForm::GradeTooHighException::what() const throw() { return ("\033[31mGrade is too high\033[0m"); }
+const char	*AForm::GradeTooHighException::what() const throw() { return ("Grade is too high"); }
 
-const char	*AForm::GradeTooLowException::what() const throw() { return ("\033[31mGrade is too low\033[0m"); }
+const char	*AForm::GradeTooLowException::what() const throw() { return ("Grade is too low"); }
 
 std::ostream& operator<<(std::ostream& os, const AForm& f)
 {
@@ -74,4 +74,4 @@ void	AForm::execute(const Bureaucrat& executor) const
 	this->action();
 }
 
-const char	*AForm::FormNotSignedException::what() const throw() { return ("\033[31mForm is not signed\033[0m"); }
+const char	*AForm::FormNotSignedException::what() const throw() { return ("Form is not signed"); }

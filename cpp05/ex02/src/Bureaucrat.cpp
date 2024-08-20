@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:40:48 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 17:08:43 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/20 16:12:00 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("\033[31mGrade is too high\033[0m");
+	return ("Grade is too high");
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("\033[31mGrade is too low\033[0m");
+	return ("Grade is too low");
 }
 
 //ex01
