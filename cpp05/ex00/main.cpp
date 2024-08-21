@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:59:18 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 14:47:09 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:00:54 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	}
 	catch (std::exception &e) 				// catching exceptions
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.what() << std::endl; // this means you call the method what() from the exception class
 	}
 	
 	std::cout << std::endl;

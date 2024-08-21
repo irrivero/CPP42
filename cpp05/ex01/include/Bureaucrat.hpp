@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:40:46 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 15:35:03 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:45:20 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ class Bureaucrat
 			public:
 				const char	*what() const throw();
 		};
-		
-		
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);

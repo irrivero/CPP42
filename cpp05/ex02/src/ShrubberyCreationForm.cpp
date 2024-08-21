@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:18:34 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/20 14:48:53 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:56:39 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,16 @@ void	ShrubberyCreationForm::action() const
         return ;
     }
 
-	ofs << "    ###\n"
-        << "   #o###\n"
-        << " #####o###\n"
-        << "#o#\\#|#/###\n"
-        << " ###\\|/#o#\n"
-        << "  # }|{  #\n"
-        << "    }|{\n";
+	ofs << "       ccee88oo\n"
+        << "  C8O8O8Q8PoOb o8oo\n"
+        << " dOB69QO8PdUOpugoO9bD\n"
+        << "CgggbU8OU qOp qOdoUOdcb\n"
+        << "    6OuU  /p u gcoUodpP\n"
+        << "      \\\\//  /douUP\n"
+        << "        \\\\////\n"
+        << "         |||/\\\n"
+        << "         |||\\/\\\n"
+        << "         |||||\\/\n"
+        << "   .....//||||\\....\n";
     ofs.close();
 }

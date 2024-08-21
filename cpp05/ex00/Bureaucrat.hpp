@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:40:46 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 14:32:24 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:59:03 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ class Bureaucrat
 		void		decrementGrade();
 
 		// Exceptions
-		class GradeTooHighException : public std::exception
+		class GradeTooHighException : public std::exception // new class that derives from exception (try - catch)
 		{
 			public:
-				const char	*what() const throw();
+				const char	*what() const throw(); // 'what' function that returns an error message
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char	*what() const throw();
+				const char	*what() const throw(); // throw() is syntax indicates that the function wont throw any exception
 		};		
 };
 
