@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:33:41 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/21 16:30:32 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 16:49:01 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,21 @@ void    ScalarConverter::convert(const std::string& literal)
         double  doubleValue = static_cast<double>(floatValue);
         std::cout << "char: Impossible" << std::endl;
         std::cout << "int: Impossible" << std::endl;
-        std::cout << "float: " << floatValue << std::endl;
-        std::cout << "double: " << doubleValue << std::endl;
+        if (literal == "nanf")
+        {
+            std::cout << "float: " << floatValue << "f" << std::endl;
+            std::cout << "double: " << doubleValue << std::endl;
+        }
+        else if (literal == "+inff")
+        {
+            std::cout << "float: " << "+inff" << std::endl;
+            std::cout << "double: " << "+inf" << std::endl;
+        }
+        else
+        {
+            std::cout << "float: " << floatValue << "f" << std::endl;
+            std::cout << "double: " << doubleValue << std::endl;
+        }
         return ;
     }
     // try pseudo-literals to double
@@ -46,8 +59,11 @@ void    ScalarConverter::convert(const std::string& literal)
         double  doubleValue = std::strtod(literal.c_str(), NULL);
         std::cout << "char: Impossible" << std::endl;
         std::cout << "int: Impossible" << std::endl;
-        std::cout << "float: " << static_cast<float>(doubleValue) << std::endl;
-        std::cout << "double: " << doubleValue << std::endl;
+        if (literal == "nan")
+            std::cout << "float: " << doubleValue << "f" << std::endl;
+        else
+        std::cout << "float: " << literal << "f" << std::endl;
+        std::cout << "double: " << literal << std::endl;
         return ;
     }
     
