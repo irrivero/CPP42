@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:42:49 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/20 16:26:54 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:34:02 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,12 @@ int	main(void)
 	// tryng to execute forms with intern (should fail)
     std::cout << YELLOW << "Attempting to execute a RobotomyRequestForm with Junior:" << RESET << std::endl;
     junior.executeForm(robotomy); // Grade too low, should throw an exception
+    std::cout << std::endl;
+    
+    // trying to execute the shrubbery form with Irene
+    std::cout << YELLOW << "Attempting to execute the ShrubberyCreationForm with Irene: " << RESET << std::endl;
+    ire.executeForm(shrubbery);
+    
 
 	std::cout << std::endl;
 	//info about the forms

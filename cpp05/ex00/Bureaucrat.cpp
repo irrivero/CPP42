@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:40:48 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/19 14:44:36 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:59:54 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name), _grade
 {
 	std::cout << CYAN << "Creating Bureaucrat with name <" << name << "> and grade <" << grade << ">" << RESET << std::endl;
 	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException(); // this means you can catch it in a try-catch block
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 }
