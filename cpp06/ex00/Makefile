@@ -1,7 +1,7 @@
 NAME = convert
 CPP = c++
 CCFLAGS = -Werror -Wall -Wextra -std=c++98
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp ScalarConverter.cpp Checkers.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
