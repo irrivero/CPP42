@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:23:44 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/22 16:56:14 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:10:03 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ class   ScalarConverter
         static void    printInt(int value);
         static void    printFloat(float value);
         static void    printDouble(double value);
+
+        static void    printExceptionMax();
+        static void    printExceptionMin();
     public:
         static void     convert(const std::string& literal);
 };
