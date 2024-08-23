@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Checkers.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 13:31:20 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/22 16:24:14 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:02:03 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ bool    ScalarConverter::isInt(const std::string& literal)
         i++;
     for (; i < literal.length(); i++)
     {
-        if (!isDigit(literal[i]))
+        if (!isdigit(literal[i]))
             return (false);
     }
-    return (i > 1 || (i == 1 && isDigit(literal[0])));
+    return (i > 1 || (i == 1 && isdigit(literal[0])));
 }
 
 bool    ScalarConverter::isDouble(const std::string& literal)

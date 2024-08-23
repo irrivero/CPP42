@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:33:41 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/22 17:01:41 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:09:56 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void    ScalarConverter::printFloat(float value)
     else
         std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
     std::cout << "int: ";
-    if (value > static_cast<float>(INT_MAX) || value < static_cast<float>(INT_MIN) || std::floor(value) != value)
-        std::cout << "Impossible" << std::endl;
-    else
+    // if (value > static_cast<float>(INT_MAX) || value < static_cast<float>(INT_MIN) || std::floor(value) != value)
+    //     std::cout << "Impossible" << std::endl;
+    // else
         std::cout << static_cast<int>(value) << std::endl;
     std::cout << "float: " << std::fixed << std::setprecision(1) << value << "f" << std::endl;
     std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
@@ -92,18 +92,38 @@ void    ScalarConverter::printDouble(double value)
     else
         std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
     std::cout << "int: ";
-    if (value > static_cast<double>(INT_MAX) || value < static_cast<double>(INT_MIN) || std::floor(value) != value)
-        std::cout << "Impossible" << std::endl;
-    else
+    // if (value > static_cast<double>(INT_MAX) || value < static_cast<double>(INT_MIN) || std::floor(value) != value)
+    //     std::cout << "Impossible" << std::endl;
+    // else
         std::cout << static_cast<int>(value) << std::endl;
     std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
     std::cout << "double: " << value << std::endl;
 
 }
+void    ScalarConverter::printExceptionMax()
+{
+    std::cout << "char: Impossible" << std::endl;
+    std::cout << "int: " << "2147483647" << std::endl;
+    std::cout << "float: " << "2147483647.0f" << std::endl;
+    std::cout << "double: " << "2147483647.0" << std::endl;
+    
+}
+
+void    ScalarConverter::printExceptionMin()
+{
+    std::cout << "char: Impossible" << std::endl;
+    std::cout << "int: " << "-2147483648" << std::endl;
+    std::cout << "float: " << "-2147483648.0f" << std::endl;
+    std::cout << "double: " << "-2147483648.0" << std::endl;
+}
 
 void    ScalarConverter::convert(const std::string& literal)
 {
-    if (literal.size() == 1)
+    if (std::atoi(literal.c_str()) >= INT_MAX)
+        printExceptionMax();
+    else if (std::atoi(literal.c_str()) <= INT_MIN)
+        printExceptionMin();
+    else if (literal.size() == 1)
     {
         if (std::isdigit(literal[0]))
             printInt(std::atoi(literal.c_str()));
