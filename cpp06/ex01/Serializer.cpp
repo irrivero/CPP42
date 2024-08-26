@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 11:41:47 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 11:58:30 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/26 12:01:08 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ Serializer::Serializer(){}
 
 Serializer::~Serializer(){}
 
-Serializer::Serializer(const Serializer &copy){(void)copy;}
+Serializer::Serializer(const Serializer &copy){ *this = copy; }
 
 Serializer &Serializer::operator=(const Serializer &copy)
 {
-	(void)copy;
+	if (this != &copy)
+		return (*this);
 	return (*this);
 }
