@@ -6,12 +6,15 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:23:44 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/23 11:41:52 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:07:18 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
+
+#define RED "\e[91m"
+#define RESET "\e[0m"
 
 #include <cstdlib>
 #include <climits>
