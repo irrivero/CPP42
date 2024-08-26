@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 13:31:20 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/23 10:02:03 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/08/23 12:20:49 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,81 @@ bool    ScalarConverter::isDouble(const std::string& literal)
     return (decimalPoint && i > 1);
 }
 
-bool    ScalarConverter::isFloat(const std::string& literal)
+// bool    ScalarConverter::isFloat(const std::string& literal)
+// {
+//     if (literal.empty())
+//         return (false);
+//     size_t  i = 0;
+//     bool    decimalPoint = false;
+//     if (literal[0] == '+' || literal[0] == '-')
+//         i++;
+//     for (; i < literal.length(); i++)
+//     {
+//         if (literal[i] == '.')
+//         {
+//             if (decimalPoint)
+//                 return (false);
+//             decimalPoint = true;
+//         }
+//         else if (literal[i] == 'f')
+//             return (i == literal.length() - 1);
+//         else if (!isDigit(literal[i]))
+//             return (false);
+//     }
+//     return (decimalPoint && i > 1);
+// }
+
+bool ScalarConverter::isFloat(const std::string& literal)
 {
     if (literal.empty())
-        return (false);
-    size_t  i = 0;
-    bool    decimalPoint = false;
+        return false;
+
+    size_t i = 0;
+    bool decimalPoint = false;
+    bool exponentPart = false;
+    
+    // Check for optional sign at the start
     if (literal[0] == '+' || literal[0] == '-')
         i++;
+    
     for (; i < literal.length(); i++)
     {
         if (literal[i] == '.')
         {
-            if (decimalPoint)
-                return (false);
+            // Ensure only one decimal point is present and it appears before the exponent
+            if (decimalPoint || exponentPart)
+                return false;
             decimalPoint = true;
         }
+        else if (literal[i] == 'e' || literal[i] == 'E')
+        {
+            // Ensure the exponent appears only once
+            if (exponentPart)
+                return false;
+            exponentPart = true;
+
+            // The character immediately following 'e' or 'E' should be a digit or a sign
+            if (i + 1 >= literal.length() || 
+                (!isdigit(literal[i + 1]) && literal[i + 1] != '+' && literal[i + 1] != '-'))
+                return false;
+
+            i++;  // Skip checking the sign or first digit of the exponent
+        }
         else if (literal[i] == 'f')
+        {
+            // The 'f' must be the last character
             return (i == literal.length() - 1);
-        else if (!isDigit(literal[i]))
-            return (false);
+        }
+        else if (!isdigit(literal[i]))
+        {
+            return false;  // Any other non-digit, non-dot, non-exponent character makes it invalid
+        }
     }
-    return (decimalPoint && i > 1);
+    
+    // Return true only if it has a decimal or exponent part, and ends with 'f'
+    return (decimalPoint || exponentPart) && literal[literal.length() - 1] == 'f';
 }
+
 
 bool    ScalarConverter::isChar(const std::string& literal)
 {
