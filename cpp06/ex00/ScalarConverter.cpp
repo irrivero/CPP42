@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:33:41 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 14:18:44 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:24:59 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void    ScalarConverter::convert(const std::string& literal)
         printPseudo(literal);
     else if (isInt(literal))
     {
-        long    l = std::strtol(literal.c_str(), nullptr, 10);
+        long    l = std::strtol(literal.c_str(), NULL, 10);
         if (l > std::numeric_limits<int>::max() || l < std::numeric_limits<int>::min())
             std::cout << RED << "Impossible: Overflow in the literal value" << RESET <<std::endl;
         else
@@ -132,7 +132,7 @@ void    ScalarConverter::convert(const std::string& literal)
     }
     else if (isFloat(literal))
     {
-        float    f = std::strtof(literal.c_str(), nullptr);
+        float    f = std::strtof(literal.c_str(), NULL);
         if (f > std::numeric_limits<float>::max() || f < std::numeric_limits<float>::min())
             std::cout << RED << "Impossible: Overflow in the literal value" << RESET <<std::endl;
         else
@@ -140,7 +140,7 @@ void    ScalarConverter::convert(const std::string& literal)
     }
     else if (isDouble(literal))
     {
-        double    f = std::strtod(literal.c_str(), nullptr);
+        double    f = std::strtod(literal.c_str(), NULL);
         if (f > std::numeric_limits<double>::max() || f < std::numeric_limits<double>::min())
             std::cout << RED << "Impossible: Overflow in the literal value" << RESET <<std::endl;
         else
