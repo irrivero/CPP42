@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:33:41 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/04 12:30:34 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:31:06 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void    ScalarConverter::printChar(char value)
     std::cout << "char:   " << (c > 127 || c < 0 ? "Impossible" 
         : (std::isprint(c) ? "'" + std::string(1, c) + "'" : "Non displayable")) << std::endl;
     std::cout << "int:    " << c << std::endl;
-    std::cout << "float:  " << static_cast<float>(value) << "f" << std::endl;
-    std::cout << "double: " << static_cast<double>(value) << std::endl;
+    std::cout << "float:  " << static_cast<float>(value) << ".0f" << std::endl;
+    std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
 }
 
 void    ScalarConverter::printInt(int value)
@@ -97,9 +97,15 @@ void ScalarConverter::printDouble(double value)
         std::cout << "Impossible" << std::endl;
     else
         std::cout << static_cast<int>(value) << std::endl;
-
-    std::cout << "float:  " <<static_cast<float>(value) << "f" << std::endl;
-    std::cout << "double: " << value << std::endl;
+    std::cout << "float:  ";
+    if (value == static_cast<int>(value))
+        std::cout << static_cast<float>(value) << ".0f" << std::endl;
+    else
+        std::cout << static_cast<float>(value) << "f" << std::endl;
+    if (static_cast<double>(value) == static_cast<int>(value))
+        std::cout << "double: " << value << ".0" << std::endl;
+    else
+        std::cout << "double: " << value << "" << std::endl;
 }
 
 void    ScalarConverter::convert(const std::string& literal)
