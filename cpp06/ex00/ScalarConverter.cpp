@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:33:41 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/04 11:24:59 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:30:34 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 
 void   ScalarConverter::printPseudo(const std::string &str)
 {
-    std::cout << "char: Impossible" << std::endl;
-    std::cout << "int:  Impossible" << std::endl;
+    std::cout << "char:   Impossible" << std::endl;
+    std::cout << "int:    Impossible" << std::endl;
     if (str == "nanf" || str == "+inff" || str == "-inff")
     {
         std::cout << "float:  " << str << std::endl;
@@ -49,7 +49,7 @@ void    ScalarConverter::printChar(char value)
     std::cout << "char:   " << (c > 127 || c < 0 ? "Impossible" 
         : (std::isprint(c) ? "'" + std::string(1, c) + "'" : "Non displayable")) << std::endl;
     std::cout << "int:    " << c << std::endl;
-    std::cout << "float:  " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
+    std::cout << "float:  " << static_cast<float>(value) << "f" << std::endl;
     std::cout << "double: " << static_cast<double>(value) << std::endl;
 }
 
@@ -59,13 +59,15 @@ void    ScalarConverter::printInt(int value)
     std::cout << "char:   " << (value > 127 || value < 0 ? "Impossible"
         : (std::isprint(value) ? "'" + std::string(1, value) + "'" : "Non displayable")) << std::endl;
     std::cout << "int:    " << value << std::endl;
-    std::cout << "float:  " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
-    std::cout << "double: " << static_cast<double>(value) << std::endl;
+    std::cout << "float:  " << static_cast<float>(value) << ".0f" << std::endl;
+    std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
 }
 void ScalarConverter::printFloat(float value)
 {
+    //std::cout << std::fixed;
+    std::cout << std::setprecision(5);
     std::cout << "char:   ";
-    if (value < 0 || value > 255 || !std::isprint(static_cast<int>(value)))
+    if (value < 0 || value > 127 || !std::isprint(static_cast<int>(value)))
         std::cout << "Impossible" << std::endl;
     else
         std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
@@ -76,21 +78,14 @@ void ScalarConverter::printFloat(float value)
     else
         std::cout << static_cast<int>(value) << std::endl;
 
-    std::cout << "float:  ";
-    if (value == static_cast<int>(value))
-        std::cout << std::fixed << std::setprecision(1) << value << "f" << std::endl;
-    else
-        std::cout << std::fixed << std::setprecision(5) << value << "f" << std::endl;
-
-    std::cout << "double: ";
-    if (static_cast<double>(value) == static_cast<int>(value))
-        std::cout << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
-    else
-        std::cout << std::fixed << std::setprecision(5) << static_cast<double>(value) << std::endl;
+    std::cout << "float:  " << value << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(value) << std::endl;
 }
 
 void ScalarConverter::printDouble(double value)
 {
+    //std::cout << std::fixed;
+    std::cout << std::setprecision(5);
     std::cout << "char:   ";
     if (value < 0 || value > 255 || !std::isprint(static_cast<int>(value)))
         std::cout << "Impossible" << std::endl;
@@ -103,17 +98,8 @@ void ScalarConverter::printDouble(double value)
     else
         std::cout << static_cast<int>(value) << std::endl;
 
-    std::cout << "float:  ";
-    if (value == static_cast<int>(value))
-        std::cout << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
-    else
-        std::cout << std::fixed << std::setprecision(5) << static_cast<float>(value) << "f" << std::endl;
-
-    std::cout << "double: ";
-    if (value == static_cast<int>(value))
-        std::cout << std::fixed << std::setprecision(1) << value << std::endl;
-    else
-        std::cout << std::fixed << std::setprecision(5) << value << std::endl;
+    std::cout << "float:  " <<static_cast<float>(value) << "f" << std::endl;
+    std::cout << "double: " << value << std::endl;
 }
 
 void    ScalarConverter::convert(const std::string& literal)
