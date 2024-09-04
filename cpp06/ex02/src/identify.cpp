@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   identify.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:19:39 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 12:37:30 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:47:56 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	identify(Base* p) // try to cast to A, B or C
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
 	else
-		std::cout << "Error" << std::endl;
+		std::cout << "Error" << std::endl; // if the cast is invalid/NULL
 }
 
 // Identify the type of a Base reference

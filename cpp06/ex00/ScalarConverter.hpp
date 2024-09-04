@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:23:44 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 14:07:18 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:43:17 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 #define RESET "\e[0m"
 
 #include <cstdlib>
-#include <climits>
+#include <limits>
 #include <iostream>
 #include <cstring>
+#include <cstddef>
 #include <string>
 #include <cerrno>
 #include <cmath>
@@ -50,6 +51,9 @@ class   ScalarConverter
         static void     convert(const std::string& literal);
 };
 
+// static_cast: a type cast expression that performs conversions between compatible types
+// int a = 10;
+// double b = static_cast<double>(a); converts int to a double
 
 
 #endif
