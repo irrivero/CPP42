@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 15:41:05 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 15:56:21 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:29:49 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void printChar(char &c)
 	std::cout << c << " ";
 }
 
-void	incrementChar(char &c)
+void	decrementChar(char &c)
 {
 	c--;
 }
@@ -79,7 +79,7 @@ int main()
 	std::cout << std::endl;
 	
 	std::cout << "Decremented char array: ";
-	iter(charArray, charArraySize, incrementChar);
+	iter(charArray, charArraySize, decrementChar);
 	iter(charArray, charArraySize, printChar);
 	std::cout << std::endl;
 

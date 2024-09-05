@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:19:38 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 16:29:44 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:37:28 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void testArray() 
 {
     try {
-        Array<int> arr1(5);  // Create an array of 5 integers
+        Array<int> arr1(7);  // Create an array of 7 integers
         for (unsigned int i = 0; i < arr1.size(); ++i)
             arr1[i] = i * 2;
 
