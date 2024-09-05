@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:38:08 by irivero-          #+#    #+#             */
-/*   Updated: 2024/08/26 15:02:53 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:02:08 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define YELLOW "\e[33m"
 #define CYAN "\e[36m"
 
-// template function to swap to values
+// template function to swap two values
 template <typename T>
 void swap(T &a, T &b)
 {
