@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:01:27 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/05 13:46:27 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:15:59 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
+
+#include <stdexcept>
+#include <iostream>
+#include <sstream>
 
 #define CYAN "\e[36m"
 #define RESET "\e[0m"

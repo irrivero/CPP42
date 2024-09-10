@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:09:05 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/05 13:52:36 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:15:18 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
-#include <stdexcept>
-#include <iostream>
 
 template <typename T>
 Array<T>::Array() : _array(NULL), _size(0) {}
@@ -21,9 +19,12 @@ template <typename T>	// constructor with size n (creates an array of n elements
 Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n) {}
 
 template <typename T>
-Array<T>::Array(const Array& src) : _array(NULL), _size(0)
+Array<T>::Array(const Array& src)
 {
-	*this = src;
+    _size = src._size;
+    _array = new T[_size];
+	for (unsigned int i = 0; i < src._size; i++)
+        _array[i] = src._array[i];
 }
 
 template <typename T>
@@ -53,8 +54,13 @@ template <typename T>
 T& Array<T>::operator[](unsigned int index)
 {
 	if (index >= _size)
-		throw std::out_of_range("Index out of range");
-	return (_array[index]);
+    {
+        std::ostringstream ss;
+        ss << "Index " << index << " out of range for size " << _size;
+        throw std::out_of_range(ss.str());
+    }
+    else    
+        return (_array[index]);
 }
 
 // Access operator[]: allow access to the elements of the array with index
@@ -64,8 +70,13 @@ template <typename T>
 const T& Array<T>::operator[](unsigned int index) const
 {
 	if (index >= _size)
-		throw std::out_of_range("Index out of range");
-	return (_array[index]);
+    {
+        std::ostringstream ss;
+        ss << "Index " << index << " out of range for size " << _size;
+        throw std::out_of_range(ss.str());
+    }
+    else    
+        return (_array[index]);
 }
 
 template <typename T>
