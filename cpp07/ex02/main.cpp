@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:19:38 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/10 12:36:26 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:41:57 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,16 @@ void    testStruct()
     {
         std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
     }
+    std::cout << std::endl;
+}
+
+void emptyArray()
+{
+    Array<int> arr;
+    std::cout << std::endl;
+    std::cout << CYAN << "Empty array " << RESET << std::endl;
+    std::cout << std::endl;
+    std::cout << "Size: " << arr.size() << std::endl;
 }
 
 int main() 
@@ -98,5 +108,7 @@ int main()
     testArray();
     std::cout << "------------------------------------------" << std::endl;
     testStruct();
+    std::cout << "------------------------------------------" << std::endl;
+    emptyArray();
     return 0;
 }
