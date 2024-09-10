@@ -73,6 +73,8 @@
         "chrono": "cpp",
         "format": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "cinttypes": "cpp",
+        "*.tpp": "c"
     }
 }
