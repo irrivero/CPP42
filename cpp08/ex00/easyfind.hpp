@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:27:13 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/05 17:33:36 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:14:33 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <iterator>
 #include <exception>
 
-// define any exception 
+// define exception 
 class NotFoundException : public std::exception
 {
 	public:
