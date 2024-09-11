@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:26:10 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/09 16:28:34 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:39:28 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class Span
 
 		// Add number to the Span
 		void	addNumber(int number);
+		// Add range of numbers to the Span
+		void	addIntoRange(int start, int end);
 		
 		// Find shortest and longest span
 		int		shortestSpan();

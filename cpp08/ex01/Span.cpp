@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:28:50 by irivero-          #+#    #+#             */
-/*   Updated: 2024/09/09 16:43:18 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:39:36 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,15 @@ void	Span::addNumber(int number)
 		_numbers.push_back(number); // add number at the end
 	else
 		throw std::out_of_range("Span is full"); 
+}
+
+void	Span::addIntoRange(int start, int end)
+{
+	if (end - start + _numbers.size() > _N) // if the range is too big
+		throw std::out_of_range("Span is full");
+	// add the range of numbers
+	for (int i = start; i <= end; ++i)
+		_numbers.push_back(i);
 }
 
 int	Span::shortestSpan()
