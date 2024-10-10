@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:29:36 by irivero-          #+#    #+#             */
-/*   Updated: 2024/10/09 18:12:12 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:27:31 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ void	BitcoinExchange::processInputFile(const std::string &input_file)
 			std::cout << "Error: bad input => " << line << std::endl;
 	}
 }
-
 
 void BitcoinExchange::calculateValue(const std::string &date, float value)
 {
