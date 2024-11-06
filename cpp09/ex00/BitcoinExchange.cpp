@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:01:43 by irivero-          #+#    #+#             */
-/*   Updated: 2024/11/06 12:01:46 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:45:15 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,12 @@ void BitcoinExchange::processInputFile(const std::string &input_file)
 		std::cerr << "Error: could not open file " << input_file << std::endl;
 		return;
 	}
+	    // Check if the file is empty
+    if (file.peek() == std::ifstream::traits_type::eof())
+    {
+        std::cerr << "Error: file " << input_file << " is empty" << std::endl;
+        return;
+    }
 	std::string line;
 	bool firstLine = true;  // Used to skip header line, if any
 	while (getline(file, line))

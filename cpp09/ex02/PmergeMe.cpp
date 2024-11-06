@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:20:29 by irivero-          #+#    #+#             */
-/*   Updated: 2024/11/06 13:26:43 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:34:32 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,21 @@ std::vector<int> PmergeMe::validateInput(int argc, char **argv)
         // Iterate over the input arguments, starting from index 1
         for (int i = 1; i < argc; i++)
         {
+            std::string arg = argv[i];
+            // Check if the argument contains only digits
+            for (size_t j = 0; j < arg.length(); ++j)
+            {
+                if (!std::isdigit(arg[j]))
+                {
+                    throw std::invalid_argument("Invalid argument.");
+                }
+            }
+
             int num = std::atoi(argv[i]); // Convert argument to integer
-            if (num <= 0)
-                throw std::invalid_argument("Only positive numbers are allowed"); // Throw exception for non-positive number
+            if (num <= 0) // Check if the number is non-positive
+            {
+                throw std::invalid_argument("Invalid argument.");
+            }
             sequence.push_back(num); // Add valid number to the sequence
         }
     }
@@ -63,7 +75,8 @@ std::vector<int> PmergeMe::validateInput(int argc, char **argv)
         std::cerr << "Error: " << e.what() << std::endl; // Display any exception message
         throw; // Rethrow the exception to propagate the error
     }
-    return (sequence);
+
+    return sequence;
 }
 
 // Display the vector before sorting
@@ -87,7 +100,7 @@ void PmergeMe::displayAfter() const
 // Sorting algorithm using the Ford-Johnson merge-insert sort for vector
 void PmergeMe::mergeInsertSortVector()
 {
-    std::vector<std::pair<int, int>> pairs;
+    std::vector<std::pair<int, int> > pairs;
 
     // Step 1: Pair adjacent elements and sort each pair
     for (size_t i = 0; i + 1 < vectorSequence.size(); i += 2) {
@@ -104,7 +117,7 @@ void PmergeMe::mergeInsertSortVector()
 
     // Step 2: Create sorted lists of min and max values
     std::vector<int> minList, maxList;
-    for (std::vector<std::pair<int, int>>::iterator it = pairs.begin(); it != pairs.end(); ++it) {
+    for (std::vector<std::pair<int, int> >::iterator it = pairs.begin(); it != pairs.end(); ++it) {
         std::pair<int, int>& p = *it;  // Dereference iterator to access the pair
         minList.push_back(p.first);    // Push the first element of the pair (min value)
         maxList.push_back(p.second);   // Push the second element of the pair (max value)
@@ -129,7 +142,7 @@ void PmergeMe::mergeInsertSortVector()
 // Sorting algorithm using the Ford-Johnson merge-insert sort for deque
 void PmergeMe::mergeInsertSortDeque()
 {
-    std::deque<std::pair<int, int>> pairs;
+    std::deque<std::pair<int, int> > pairs;
 
     // Step 1: Pair adjacent elements and sort each pair
     for (size_t i = 0; i + 1 < dequeSequence.size(); i += 2) {
@@ -146,7 +159,7 @@ void PmergeMe::mergeInsertSortDeque()
 
     // Step 2: Create sorted lists of min and max values
     std::deque<int> minList, maxList;
-    for (std::deque<std::pair<int, int>>::iterator it = pairs.begin(); it != pairs.end(); ++it) {
+    for (std::deque<std::pair<int, int> >::iterator it = pairs.begin(); it != pairs.end(); ++it) {
         std::pair<int, int>& p = *it;  // Dereference iterator to access the pair
         minList.push_back(p.first);    // Push the first element of the pair (min value)
         maxList.push_back(p.second);   // Push the second element of the pair (max value)

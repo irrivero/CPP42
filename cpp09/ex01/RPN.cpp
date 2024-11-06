@@ -6,7 +6,7 @@
 /*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:02:02 by irivero-          #+#    #+#             */
-/*   Updated: 2024/11/06 12:12:47 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:10:50 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ int RPN::calculate(const std::string &expression)
 		// If token is a number, push it onto the stack
 		if (isdigit(token[0]))
 		{
-			int num = std::stoi(token);
+			//int num = std::stoi(token);
+			std::stringstream ss(token);
+			int num;
+			ss >> num;
 			if (num >= 10)
 			{
 				std::cerr << "Error: numbers used must be less than 10" << std::endl;
