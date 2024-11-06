@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:20:24 by irivero-          #+#    #+#             */
-/*   Updated: 2024/10/14 15:55:24 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:49:58 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 #include <vector>
 #include <ctime>
 #include <stdexcept>
+#include <climits>
+#include <set>
+
 
 class PmergeMe
 {

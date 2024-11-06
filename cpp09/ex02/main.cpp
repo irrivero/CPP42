@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:20:36 by irivero-          #+#    #+#             */
-/*   Updated: 2024/10/14 15:55:11 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:53:34 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int ac, char **av)
 {
 	std::vector<int> sequence;
+	
 	try
 	{	
 		sequence = PmergeMe::validateInput(ac, av);
