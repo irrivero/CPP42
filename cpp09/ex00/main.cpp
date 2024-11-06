@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:37:20 by irivero-          #+#    #+#             */
-/*   Updated: 2024/10/09 17:37:28 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:47:49 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 {
     if (argc != 2)
 	{
-        std::cerr << "Error: could not open file." << std::endl;
+        std::cerr << "Error" << std::endl << "Usage: ./btc [input_file]" << std::endl;
         return 1;
     }
 
