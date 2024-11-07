@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:02:02 by irivero-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:10:50 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:27:18 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,10 @@ int RPN::calculate(const std::string &expression)
 	// Loop through each token in the expression
 	while (iss >> token)
 	{
-		// If token is a number, push it onto the stack
-		if (isdigit(token[0]))
+		// If token is a single-digit number, push it onto the stack
+		if (token.size() == 1 && isdigit(token[0])) 
 		{
-			//int num = std::stoi(token);
-			std::stringstream ss(token);
-			int num;
-			ss >> num;
-			if (num >= 10)
-			{
-				std::cerr << "Error: numbers used must be less than 10" << std::endl;
-				return (1);
-			}
+			int num = token[0] - '0'; // Convert character to integer
 			stack.push(num);
 		}
 		// If token is an operator, pop two elements and perform the operation
@@ -63,7 +55,7 @@ int RPN::calculate(const std::string &expression)
 			if (stack.size() < 2)
 			{
 				std::cerr << "Error: not enough operands" << std::endl;
-				return (1);
+				return (-42);
 			}
 			int num2 = stack.top(); stack.pop(); // Pop the top element (second operand)
 			int num1 = stack.top(); stack.pop(); // Pop the next element (first operand)
@@ -77,7 +69,15 @@ int RPN::calculate(const std::string &expression)
 			else if (token == "*")
 				result = num1 * num2;
 			else if (token == "/")
+			{
+				// Check for division by zero
+				if (num2 == 0)
+				{
+					std::cerr << "Error: division by zero" << std::endl;
+					return (-42); // Exit with an error
+				}
 				result = num1 / num2;
+			}
 
 			// Push the result back onto the stack
 			stack.push(result);
@@ -86,7 +86,7 @@ int RPN::calculate(const std::string &expression)
 		else
 		{
 			std::cerr << "Error: invalid token" << std::endl;
-			return (1);
+			return (-42);
 		}
 	}
 
@@ -94,7 +94,9 @@ int RPN::calculate(const std::string &expression)
 	if (stack.size() != 1)
 	{
 		std::cerr << "Error: invalid expression" << std::endl;
-		return (1);
+		return (-42);
 	}
-	return (stack.top()); // Return the final result
+
+	//std::cout << "Result: " << stack.top() << std::endl; // Output the final result
+	return (stack.top());
 }
