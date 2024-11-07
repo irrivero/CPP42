@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irivero- <irivero-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: irivero- <irivero-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:01:43 by irivero-          #+#    #+#             */
-/*   Updated: 2024/11/06 15:45:15 by irivero-         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:05:35 by irivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,13 @@ void BitcoinExchange::processInputFile(const std::string &input_file)
 		std::cerr << "Error: could not open file " << input_file << std::endl;
 		return;
 	}
-	    // Check if the file is empty
-    if (file.peek() == std::ifstream::traits_type::eof())
-    {
-        std::cerr << "Error: file " << input_file << " is empty" << std::endl;
-        return;
-    }
+	// Check if the file is empty
+	if (file.peek() == std::ifstream::traits_type::eof())
+	{
+		std::cerr << "Error: file " << input_file << " is empty" << std::endl;
+		return;
+	}
+
 	std::string line;
 	bool firstLine = true;  // Used to skip header line, if any
 	while (getline(file, line))
@@ -100,11 +101,14 @@ void BitcoinExchange::processInputFile(const std::string &input_file)
 			continue;
 		}
 		date = trim(date);  // Remove any surrounding whitespace from the date
-		if (!(ss >> value))  // Try to read the float value after '|'
+		
+		// Check if the value can be read and if there are no extra characters
+		if (!(ss >> value) || !ss.eof())  // Try to read the float value after '|' and ensure no trailing characters
 		{
 			std::cout << "Error: bad input => " << line << std::endl;
 			continue;
 		}
+
 		if (isDateValid(date))  // Validate date format
 		{
 			if (isValueValid(value))  // Check if value is within allowed range
@@ -114,6 +118,7 @@ void BitcoinExchange::processInputFile(const std::string &input_file)
 			std::cout << "Error: bad input => " << line << std::endl;
 	}
 }
+
 
 // Calculates and outputs the equivalent bitcoin value based on the closest historical price.
 void BitcoinExchange::calculateValue(const std::string &date, float value)
@@ -135,18 +140,39 @@ void BitcoinExchange::calculateValue(const std::string &date, float value)
 // Validates if the date is in YYYY-MM-DD format and if the month/day values are plausible.
 bool BitcoinExchange::isDateValid(const std::string &date)
 {
+    // Verificar formato de fecha: "YYYY-MM-DD"
     if (date.size() != 10 || date[4] != '-' || date[7] != '-')
-	{
+    {
         return false;
-	}
-	int month, day;
-	std::istringstream(date.substr(5, 2)) >> month;
-	std::istringstream(date.substr(8, 2)) >> day;
-
-    if (month < 1 || month > 12 || day < 1 || day > 31)  // Basic range check
+    }
+    int year, month, day;
+    std::istringstream(date.substr(0, 4)) >> year;
+    std::istringstream(date.substr(5, 2)) >> month;
+    std::istringstream(date.substr(8, 2)) >> day;
+    // Verificar rango del año, mes y día
+    if (year < 1900 || year > 2100 || month < 1 || month > 12 || day < 1)
+    {
         return false;
+    }
+    // Número de días en cada mes
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    // Ajustar febrero para años bisiestos
+    if (month == 2)
+    {
+        bool isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        if (isLeap)
+        {
+            daysInMonth[1] = 29;
+        }
+    }
+    // Verificar si el día está en el rango del mes correspondiente
+    if (day > daysInMonth[month - 1])
+    {
+        return false;
+    }
     return true;
 }
+
 
 // Checks if the bitcoin value is within a reasonable range (0-1000).
 bool BitcoinExchange::isValueValid(float value)
